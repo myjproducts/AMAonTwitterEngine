@@ -1,0 +1,16 @@
+{
+    "site_name":"ASK EHIME 2014",
+    "pref":"愛媛県",
+    "year":"2014",
+    "voting_date":"2014年11月16日",
+    "period_of_asking":"2014年11月1日 21時～22時",
+    "twitter_id":"exampletwitter",
+    "candidates":[
+        { "name":"AAA", "id":"aaa", "icon":"icon.png" },
+        { "name":"BBB", "id":"bbb", "icon":"icon.png" },
+        { "name":"CCC", "id":"ccc", "icon":"icon.png" },
+        { "name":"DDD", "id":"ddd", "icon":"icon.png" } 
+    ],
+    "fb_app_id":"122682327907360",
+    "analystics_id":"UA-XXXXX-1"
+}
