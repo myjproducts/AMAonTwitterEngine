@@ -9,7 +9,7 @@ function debug(bool){
 }
 
 var express = require('express')
-  , routes = require('./routes')
+//  , routes = require('./routes')
   , http = require('http')
   , _ = require('underscore')
   , twitter = require('ntwitter')
@@ -19,6 +19,9 @@ var express = require('express')
 
 var common = require('./common');
 var config = common.config();
+
+var info = require('./info.json');
+console.log(info.pref);
 
 var app = express()
   , server = require('http').createServer(app)
@@ -132,6 +135,15 @@ app.get('/', function (req, res) {
   res.render('index', {
     socketio_url: config.socketio_url,
     from: req.query.from,
+    site_name: info.site_name,
+    pref: info.pref,
+    voting_date: info.voting_date,
+    year: info.year,
+    period_of_asking: info.period_of_asking,
+    candidates: info.candidates,
+    twitter_id: info.twitter_id,
+    fb_app_id: info.fb_app_id,
+    analystics_id: info.analystics_id,
     max_tweet_length: 100
   });
 });

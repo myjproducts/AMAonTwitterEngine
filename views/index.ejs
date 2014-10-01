@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-  <title>ASK EHIME 2014 #愛媛県知事候補だけど質問ある？ | 愛媛県知事候補へ「趣味のこと」から「愛媛県知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のためのウェブキャンペーンです。</title>
+  <title><%= site_name %> #<%= pref %>知事候補だけど質問ある？ | <%= pref %>知事候補へ「趣味のこと」から「<%= pref %>知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のためのウェブキャンペーンです。</title>
   <!--site Attribute-->
-  <meta name="description" content="ASK EHIME 2014　#愛媛県知事候補だけど質問ある？ ASK EHIME 2014は愛媛県民と愛媛県知事選立候補者とのウェブコミュニケーションを実現します。">
+  <meta name="description" content="<%= site_name %>　#<%= pref %>知事候補だけど質問ある？ <%= site_name %>は<%= pref %>民と<%= pref %>知事選立候補者とのウェブコミュニケーションを実現します。">
 
   <!-- OG -->
-  <meta property="og:title" content="ASK EHIME 2014 #愛媛県知事候補だけど質問ある？ / 投票に行く人を増やす。" />
+  <meta property="og:title" content="<%= site_name %> #<%= pref %>知事候補だけど質問ある？ / 投票に行く人を増やす。" />
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="ASK EHIME 2014は、愛媛県知事候補へ「趣味のこと」から「愛媛県知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のためのウェブキャンペーンです。「こんなことを聞いてもいいのかな？」なんて心配は要りません。せっかくのこの機会に、何か質問してみませんか？" />
+  <meta property="og:description" content="<%= site_name %>は、<%= pref %>知事候補へ「趣味のこと」から「<%= pref %>知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のためのウェブキャンペーンです。「こんなことを聞いてもいいのかな？」なんて心配は要りません。せっかくのこの機会に、何か質問してみませんか？" />
   <meta property="og:url" content="http://amaontwitter.com/" />
   <meta property="og:image" content="http://amaontwitter.com/img/logo.png" />
-  <meta property="og:site_name" content="ASK EHIME 2014 #愛媛県知事候補だけど質問ある？ / 投票に行く人を増やす。" />
+  <meta property="og:site_name" content="<%= site_name %> #<%= pref %>知事候補だけど質問ある？ / 投票に行く人を増やす。" />
   <!-- OG -->
 
   <script type="text/javascript">
@@ -38,7 +38,7 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-XXXXXX-1', 'amaontwitter.com');
+    ga('create', '<%= analystics_id %>', 'amaontwitter.com');
     ga('send', 'pageview');
   </script>
 </head>
@@ -51,7 +51,7 @@
 
       <header id="header">
         <ul>
-          <li>2014年11月16日愛媛県知事選投票日 投票に行く人を増やす。</li>
+          <li><%= voting_date %><%= pref %>知事選投票日 投票に行く人を増やす。</li>
           <li>
             <ul class="shareBtn">
 
@@ -62,7 +62,7 @@
               </li>
               <li>
                 <div class="tweetButton">
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-text="2014年愛媛県知事選挙、立候補者の方々がTwitterユーザーからの質問に答えてくれました。候補者から集まった回答を参考に、是非投票に行ってください。 #愛媛県知事候補だけど質問ある？ #愛媛県知事選 " data-lang="ja" data-related="twitterのアカウント名" data-via="twitterのアカウント名">ツイート</a>
+                  <a href="https://twitter.com/share" class="twitter-share-button" data-text="<%= year %><%= pref %>知事選挙、立候補者の方々がTwitterユーザーからの質問に答えてくれました。候補者から集まった回答を参考に、是非投票に行ってください。 #<%= pref %>知事候補だけど質問ある？ #<%= pref %>知事選 " data-lang="ja" data-related="twitterのアカウント名" data-via="twitterのアカウント名">ツイート</a>
                 </div>
               </li>
               <li>
@@ -72,7 +72,7 @@
               </li>
               <li>
                 <div class="hatebuButton">
-                  <a href="http://b.hatena.ne.jp/entry/amaontwitter.com" class="hatena-bookmark-button" data-hatena-bookmark-title="AskEhime2014 #愛媛県知事候補だけど質問ある？" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加">
+                  <a href="http://b.hatena.ne.jp/entry/amaontwitter.com" class="hatena-bookmark-button" data-hatena-bookmark-title="<%= site_name %> #<%= pref %>知事候補だけど質問ある？" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加">
                     <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
                   </a>
                 </div>
@@ -85,11 +85,9 @@
       <section id="questionArea">
         <div class="left">
           <h1>
-            ASK EHIME
-            <br/>
-            2014
+            <%= site_name %>
           </h1>
-          <h2>#愛媛県知事候補だけど質問ある？</h2>
+          <h2>#<%= pref %>知事候補だけど質問ある？</h2>
           <div class="block">
             <form id="questionForm" action="/tweet" method='POST'>
 
@@ -100,7 +98,7 @@
             </form>
             <section id="concept">
               <p>
-                ASK EHIME 2014は、愛媛県知事候補へ「趣味のこと」から「愛媛県知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のための日本初のウェブキャンペーンです。「こんなことを聞いてもいいのかな？」なんて心配は要りません。せっかくのこの機会に、何か質問してみませんか？
+                <%= site_name %>は、<%= pref %>知事候補へ「趣味のこと」から「<%= pref %>知事になってやりたい政策」まで何でも自由に直接質問できる、市民と候補者のための日本初のウェブキャンペーンです。「こんなことを聞いてもいいのかな？」なんて心配は要りません。せっかくのこの機会に、何か質問してみませんか？
               </p>
               <p>
                 <span id="fixCandidateList"></span>
@@ -116,8 +114,8 @@
               <div class="user">
                 <img class="icon" src="/img/icon.png" />
                 <div class="name">
-                  <p>#愛媛県知事候補だけど質問ある？</p>
-                  <a href="https://twitter.com/AMAonTwitterEngine" target="_blank">@AMAonTwitterEngine</a>
+                  <p>#<%= pref %>知事候補だけど質問ある？</p>
+                  <a href="https://twitter.com/<%= twitter_id %>" target="_blank">@<%= twitter_id %></a>
                 </div>
               </div>
               <div id="hashTweetCount" class="responseCount">0</div>
@@ -146,13 +144,13 @@
             <h2>質疑応答</h2>
 
             <ul class="candidatesHead">
-
+            <% candidates.forEach(function (candidate) { %>
               <li class="candidate">
                 <div class="user">
-                  <img class="icon" src="/img/icon.png" />
+                  <img class="icon" src="/img/<%= candidate.icon %>" />
                   <div class="name">
-                    <p>C◯◯候補</p>
-                    <a href="https://twitter.com/utsunomiyakenji" target="_blank">@candidates_account</a>
+                    <p><%= candidate.name %>候補</p>
+                    <a href="https://twitter.com/<%= candidate.id %>" target="_blank">@<%= candidate.id %></a>
                   </div>
                 </div>
                 <div id="uCount" class="responseCount">0</div>
@@ -163,57 +161,7 @@
                   </li>
                 </ul>
               </li>
-
-              <li class="candidate">
-                <div class="user">
-                  <img class="icon" src="/img/icon.png" />
-                  <div class="name">
-                    <p>D◯◯候補</p>
-                    <a href="https://twitter.com/MasuzoeYoichi" target="_blank">@candidates_account</a>
-                  </div>
-                </div>
-                <div id="mCount" class="responseCount">0</div>
-
-                <ul class="candidateTimeLines">
-                  <li id="mTweet" class="candidateTimeLine">
-                    <ul class="qa"></ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="candidate">
-                <div class="user">
-                  <img class="icon" src="/img/icon.png" />
-                  <div class="name">
-                    <p>E◯◯候補</p>
-                    <a href="https://twitter.com/hbkr" target="_blank">@candidates_account</a>
-                  </div>
-                </div>
-                <div id="iCount" class="responseCount">0</div>
-
-                <ul class="candidateTimeLines">
-                  <li id="iTweet" class="candidateTimeLine">
-                    <ul class="qa"></ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="candidate">
-                <div class="user">
-                  <img class="icon" src="/img/icon.png" />
-                  <div class="name">
-                    <p>F◯◯候補</p>
-                    <a href="https://twitter.com/morihirotokyo" target="_blank">@candidates_account</a>
-                  </div>
-                </div>
-                <div id="hCount" class="responseCount">0</div>
-
-                <ul class="candidateTimeLines">
-                  <li id="hTweet" class="candidateTimeLine">
-                    <ul class="qa"></ul>
-                  </li>
-                </ul>
-              </li>
+            <% }); %>
 
               <li id="mobile" class="candidate">
                 <div class="user">
@@ -240,13 +188,13 @@
               <li>
                 <h3>STEP1「質問する」</h3>
                 <p>
-                  あなたから愛媛県知事候補に聞いてみたいことを投稿してください。政策のこと、学生時代のことなど、なんでも構いません。（投稿にはツイッターアカウントが必要です）
+                  あなたから<%= pref %>知事候補に聞いてみたいことを投稿してください。政策のこと、学生時代のことなど、なんでも構いません。（投稿にはツイッターアカウントが必要です）
                 </p>
               </li>
               <li>
                 <h3>STEP2「回答を見る」</h3>
                 <p>
-                  2/4(火) 21時～22時の間（※1）、寄せられた質問に愛媛県知事候補が一斉に答えます。回答は、この特設サイトからご覧ください。回答は、寄せられた質問の中から運営側が選定した（※2）質問に対して行われます。（回答いただく質問は各候補への共通質問と愛媛県知事候補自らが選定した質問の2種類があります。）（※3）
+                  <%= period_of_asking %>の間（※1）、寄せられた質問に<%= pref %>知事候補が一斉に答えます。回答は、この特設サイトからご覧ください。回答は、寄せられた質問の中から運営側が選定した（※2）質問に対して行われます。（回答いただく質問は各候補への共通質問と<%= pref %>知事候補自らが選定した質問の2種類があります。）（※3）
                 </p>
               </li>
               <li>
@@ -286,7 +234,7 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=122682327907360";
+  js.src = "//connect.facebook.net/ja_JP/all.js#xfbml=1&appId=<%= fb_app_id %>";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
