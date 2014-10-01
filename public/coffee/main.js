@@ -108,11 +108,16 @@ class TweetBox
       this.showMoreTweets()
 
   add: (tweet) ->
-    @tweets.push tweet
-    $("#{@selector} .stream").prepend tweet.content('newTweet')
-    @newTweets++
-    @favicon.badge(@newTweets)
-    $("#hashTweetCount").text @newTweets
+    filterTweets = []
+    filterTweets = `$.grep(this.tweets, function(value, index){
+        return (tweet.username === value.username) && (tweet.username !== "undefined") && (tweet.text === value.text);
+      })`
+    if !filterTweets.length
+      @tweets.push tweet
+      $("#{@selector} .stream").prepend tweet.content('newTweet')
+      @newTweets++
+      @favicon.badge(@newTweets)
+      $("#hashTweetCount").text @newTweets
     this.updateNumber()
 
   showNewTweets: ->

@@ -147,11 +147,18 @@
     }
 
     TweetBox.prototype.add = function(tweet) {
-      this.tweets.push(tweet);
-      $("" + this.selector + " .stream").prepend(tweet.content('newTweet'));
-      this.newTweets++;
-      this.favicon.badge(this.newTweets);
-      $("#hashTweetCount").text(this.newTweets);
+      var filterTweets;
+      filterTweets = [];
+      filterTweets = $.grep(this.tweets, function(value, index){
+        return (tweet.username === value.username) && (tweet.username !== "undefined") && (tweet.text === value.text);
+      });
+      if (!filterTweets.length) {
+        this.tweets.push(tweet);
+        $("" + this.selector + " .stream").prepend(tweet.content('newTweet'));
+        this.newTweets++;
+        this.favicon.badge(this.newTweets);
+        $("#hashTweetCount").text(this.newTweets);
+      }
       return this.updateNumber();
     };
 

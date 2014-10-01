@@ -123,7 +123,7 @@ app.configure('production', function(){
   debug(false);
 });
 
-server.listen(config.port);
+server.listen(app.get('port'));
 
 /**
  *
@@ -249,10 +249,6 @@ app.post('/tweet', function(req,res){
                 return;
               }
               var post = new Post(data);
-              post.created_at = new Date();
-              post.save( function(err) {
-                if (err) consoleHolder.error(err);
-              });
               var json_data = {
                 username:data.user.screen_name,
                 icon:data.user.profile_image_url,
@@ -295,10 +291,6 @@ app.get('/tweet', function(req,res){
                 return;
               }
               var post = new Post(data);
-              post.created_at = new Date();
-              post.save( function(err) {
-                if (err) consoleHolder.error(err);
-              });
               var json_data = {
                 username:data.user.screen_name,
                 icon:data.user.profile_image_url,
