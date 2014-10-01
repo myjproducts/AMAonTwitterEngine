@@ -108,11 +108,16 @@ class TweetBox
       this.showMoreTweets()
 
   add: (tweet) ->
-    @tweets.push tweet
-    $("#{@selector} .stream").prepend tweet.content('newTweet')
-    @newTweets++
-    @favicon.badge(@newTweets)
-    $("#hashTweetCount").text @newTweets
+    filterTweets = []
+    filterTweets = `$.grep(this.tweets, function(value, index){
+        return (tweet.username === value.username) && (tweet.username !== "undefined") && (tweet.text === value.text);
+      })`
+    if !filterTweets.length
+      @tweets.push tweet
+      $("#{@selector} .stream").prepend tweet.content('newTweet')
+      @newTweets++
+      @favicon.badge(@newTweets)
+      $("#hashTweetCount").text @newTweets
     this.updateNumber()
 
   showNewTweets: ->
@@ -237,14 +242,14 @@ showMessage = (selector, firstText, color, secondText) ->
 readDropbox = ->
   $.ajax
     type: "GET"
-    url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/candidate.txt"
+    url: "https://dl.dropboxusercontent.com/u/7119936/askehime/candidate.txt"
     success: (text) ->
       $('#candidateList').text(text)
     error: (data, textStatus, errorThrown) ->
 
   $.ajax
     type: "GET"
-    url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/fixcandidate.txt"
+    url: "https://dl.dropboxusercontent.com/u/7119936/askehime/fixcandidate.txt"
     success: (text) ->
       $('#fixCandidateList').text(text)
     error: (data, textStatus, errorThrown) ->

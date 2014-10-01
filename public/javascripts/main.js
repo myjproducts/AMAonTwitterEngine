@@ -147,11 +147,18 @@
     }
 
     TweetBox.prototype.add = function(tweet) {
-      this.tweets.push(tweet);
-      $("" + this.selector + " .stream").prepend(tweet.content('newTweet'));
-      this.newTweets++;
-      this.favicon.badge(this.newTweets);
-      $("#hashTweetCount").text(this.newTweets);
+      var filterTweets;
+      filterTweets = [];
+      filterTweets = $.grep(this.tweets, function(value, index){
+        return (tweet.username === value.username) && (tweet.username !== "undefined") && (tweet.text === value.text);
+      });
+      if (!filterTweets.length) {
+        this.tweets.push(tweet);
+        $("" + this.selector + " .stream").prepend(tweet.content('newTweet'));
+        this.newTweets++;
+        this.favicon.badge(this.newTweets);
+        $("#hashTweetCount").text(this.newTweets);
+      }
       return this.updateNumber();
     };
 
@@ -319,7 +326,7 @@
   readDropbox = function() {
     $.ajax({
       type: "GET",
-      url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/candidate.txt",
+      url: "https://dl.dropboxusercontent.com/u/7119936/askehime/candidate.txt",
       success: function(text) {
         return $('#candidateList').text(text);
       },
@@ -327,7 +334,7 @@
     });
     return $.ajax({
       type: "GET",
-      url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/fixcandidate.txt",
+      url: "https://dl.dropboxusercontent.com/u/7119936/askehime/fixcandidate.txt",
       success: function(text) {
         return $('#fixCandidateList').text(text);
       },

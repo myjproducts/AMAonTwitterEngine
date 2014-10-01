@@ -1,7 +1,8 @@
 {
   "name": "application-name",
   "version": "0.0.1",
-  "private": true,
+  "description": "AskEhime2014",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -14,9 +15,23 @@
     "underscore": "~1.5.2",
     "passport": "~0.2.0",
     "passport-twitter": "~1.0.2",
+    "immortal-ntwitter": "git://github.com/horixon/immortal-ntwitter.git",
     "ntwitter": "~0.5.0",
     "request": "~2.33.0",
     "connect": "~2.12.0",
     "session-mongoose": "~0.4.1"
-  }
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+     "node",
+     "heroku",
+     "express"
+  ],
+  "license": "MIT"
 }

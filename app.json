@@ -1,0 +1,7 @@
+{
+  "name": "ASK EHIME 2014",
+  "description": "Ask Ehime 2014 open source version",
+  "repository": "https://github.com/myjproducts/AMAonTwitterEngine",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"]
+}
