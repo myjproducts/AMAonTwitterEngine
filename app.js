@@ -155,6 +155,14 @@ app.get('/', function (req, res) {
   });
 });
 
+app.get('/memberonlyadminpage', function (req, res) {
+  res.render('admin', {
+     socketio_url: config.socketio_url,
+     from: req.query.from,
+     max_tweet_length: 100
+  });
+});
+
 app.get('/api/fetch_hash_tweets', function (req, res) {
   var limit = req.query.limit;
   var from_id = req.query.from_id;
