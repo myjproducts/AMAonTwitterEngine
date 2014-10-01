@@ -242,14 +242,14 @@ showMessage = (selector, firstText, color, secondText) ->
 readDropbox = ->
   $.ajax
     type: "GET"
-    url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/candidate.txt"
+    url: "https://dl.dropboxusercontent.com/u/7119936/askehime/candidate.txt"
     success: (text) ->
       $('#candidateList').text(text)
     error: (data, textStatus, errorThrown) ->
 
   $.ajax
     type: "GET"
-    url: "https://dl.dropboxusercontent.com/u/7963766/asktokyo/fixcandidate.txt"
+    url: "https://dl.dropboxusercontent.com/u/7119936/askehime/fixcandidate.txt"
     success: (text) ->
       $('#fixCandidateList').text(text)
     error: (data, textStatus, errorThrown) ->
