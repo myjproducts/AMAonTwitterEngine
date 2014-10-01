@@ -10,6 +10,7 @@ function debug(bool){
 
 var express = require('express')
 //  , routes = require('./routes')
+  , util = require('util')
   , http = require('http')
   , _ = require('underscore')
   , twitter = require('ntwitter')
@@ -27,14 +28,20 @@ var app = express()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server);
 var RedisStore = require('socket.io/lib/stores/redis');
-opts = {host:config.redis, port:6379};
-io.set('store', new RedisStore({redisPub:opts, redisSub:opts, redisClient:opts}));
  
 var SessionStore = require('session-mongoose')(express)
 
 var redis = require('redis');
-var pub = redis.createClient("6379",config.redis);
-var sub = redis.createClient("6379",config.redis);
+var rtg = require("url").parse(config.redis);
+var pub = redis.createClient(rtg.port, rtg.hostname);
+pub.auth(rtg.auth.split(":")[1]);
+var sub = redis.createClient(rtg.port, rtg.hostname);
+sub.auth(rtg.auth.split(":")[1]);
+
+var client = redis.createClient(rtg.port, rtg.hostname);
+client.auth(rtg.auth.split(":")[1]);
+io.set('store', new RedisStore({redis:redis, redisPub:pub, redisSub:sub, redisClient:client}));
+
 sub.subscribe('Pub');
 
 var TWITTER_CONSUMER_KEY = config.twitter_consumer_key;
